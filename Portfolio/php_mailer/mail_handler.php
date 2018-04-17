@@ -1,34 +1,34 @@
 <?php
 require_once('email_config.php');
-require('PHPMailerAutoload.php');
+require('PHPMailer/PHPMailerAutoload.php');
 $message = [];
 $output = [
     'success' => null,
     'messages' => []
 ];
 //name field
-$message['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+$message['name'] = filter_var($_POST['postName'], FILTER_SANITIZE_STRING);
 if(empty($message['name'])){
     $output['success'] = false;
     $output['messages'][] = 'missing name key';
 }
 //email field
-$message['email'] = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
+$message['email'] = filter_var($_POST['postEmail'], FILTER_SANITIZE_STRING);
 if(empty($message['email'])){
     $output['success'] = false;
     $output['messages'][] = 'missing email key';
 }
 //message
-$message['message'] = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+$message['message'] = filter_var($_POST['postMessage'], FILTER_SANITIZE_STRING);
 if(empty($message['message'])){
     $output['success'] = false;
     $output['messages'][] = 'missing comments key';
 }
 //subject
-$message['subject'] = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
+$message['subject'] = filter_var($_POST['postMessage'], FILTER_SANITIZE_STRING);
 
 //phone
-$message['phone'] = filter_var($_POST['phone'], FILTER_VALIDATE_REGEXP, ['options'=>['regexp'=>'/regex pattern here/']]);
+$message['phone'] = filter_var($_POST['postPhone'], FILTER_VALIDATE_REGEXP, ['options'=>['regexp'=>'/regex pattern here/']]);
 
 
 

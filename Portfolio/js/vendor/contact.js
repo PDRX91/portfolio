@@ -54,7 +54,7 @@ $(document).ready(function() {
 
         jQuery.ajax({
             type: "POST",
-            url: "contact.php",
+            url: "php_mailer/mail_handler.php",
             dataType: "html",
             data: myData,
             success: function(response) {
@@ -98,7 +98,7 @@ $(document).ready(function() {
 
         jQuery.ajax({
             type: "POST",
-            url: "contact.php",
+            url: "php_mailer/mail_handler.php",
             dataType: "html",
             data: myData,
             success: function(response) {
