@@ -88,5 +88,6 @@ if(!$mail->send()) {
 } else {
     $output['success'] = true;
 }
-echo json_encode($output);
+// echo json_encode($output);
+echo 'Thanks for your message! I will get back to you as soon as possible.'
 ?>
