@@ -36,12 +36,9 @@ $message['phone'] = filter_var($_POST['postPhone'], FILTER_VALIDATE_REGEXP, ['op
 if($output['success'] !== null){
     http_response_code(400);
     // echo json_encode($output);
-    echo 'Thanks for your message! I will get back to you as soon as possible.';
-    exit();
-} else if($output['success'] === null){
     echo 'Sorry, there was an issue with the server, please try again later.';
     exit();
-}
+} 
 
 $mail = new PHPMailer;
 $mail->SMTPDebug = 3;           // Enable verbose debug output. Change to 0 to disable debugging output.
@@ -89,8 +86,12 @@ $mail->AltBody = htmlentities($message['message']);
 if(!$mail->send()) {
     $output['success']= false;
     $output['messages'][] = $mail->ErrorInfo;
+    echo 'Sorry, there was an issue with the server, please try again later.';
+    exit();
 } else {
     $output['success'] = true;
+    echo 'Thanks for your message! I will get back to you as soon as possible.';
+    exit();
 }
-// echo json_encode($output);
+
 ?>
