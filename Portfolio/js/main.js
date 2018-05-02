@@ -89,13 +89,12 @@ jQuery(document).ready(function ($) {
 
 
     $(window).on("load", function () {
-
         /* ==============================================
          Preloader
          =============================================== */
         $("#status").fadeOut(); // will first fade out the loading animation
         $("#preloader").delay(450).fadeOut("slow"); // will fade out the white DIV that covers the website.
-        
+ 
         
         /* ==============================================
          Company-about Carousel
@@ -629,6 +628,8 @@ jQuery(document).ready(function ($) {
         $('html, body').animate({scrollTop: 0}, '1200');
         return false;
     });
+    
+    
 
     /* ==============================================
      ANIMATED SKILL BARS
