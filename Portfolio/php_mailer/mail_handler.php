@@ -38,7 +38,7 @@ if($output['success'] !== null){
     // echo json_encode($output);
     echo 'Thanks for your message! I will get back to you as soon as possible.';
     exit();
-} else {
+} else if($output['success'] === null){
     echo 'Sorry, there was an issue with the server, please try again later.';
 }
 
