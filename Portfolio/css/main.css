@@ -1421,7 +1421,7 @@ section.bg-non-fixed {
   transition: all 0.5s ease;
 }
 .img-rotate img {
-  -webkit-transform: rotateY(22deg);
+  /* -webkit-transform: rotateY(22deg);
   -moz-transform: rotateY(22deg);
   -ms-transform: rotateY(22deg);
   -o-transform: rotateY(22deg);
@@ -1433,7 +1433,8 @@ section.bg-non-fixed {
   -o-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  -moz-transform-origin: top;
+  -moz-transform-origin: top; */
+  border-radius: 50%;
 }
 .img-y-trans {
   position: absolute;
@@ -2861,7 +2862,16 @@ textarea:focus {
   font-size: 18px;
 }
 .widget-block {
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
+}
+.dingImg{
+  margin:5% auto;
+}
+.connectImg{
+  margin:5% 0;
+}
+.trailMixImg{
+  margin:5% 0;
 }
 .widget-block p {
   color: rgba(255, 255, 255, 0.5);
