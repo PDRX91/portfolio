@@ -13,7 +13,7 @@ $(document).ready(function() {
     $('#MainResult').hide(); //we will hide this right now
     $('#form-wrapper').show(); //show main form
     $(".contact-btn").click(function() { //User clicks on Submit button
-
+        
         // Fetch data from input fields.
         var js_name = $("#name").val();
         var js_email = $("#email").val();
@@ -51,19 +51,24 @@ $(document).ready(function() {
 
         //let's put all data together
         var myData = 'postName=' + js_name + '&postEmail=' + js_email + '&postPhone=' + js_phone + '&postMessage=' + js_message;
-
+        var spinner = $('<div>',{
+            class:'loader'
+        });
+        $(event.target).prepend(spinner);
         jQuery.ajax({
             type: "POST",
             url: "php_mailer/mail_handler.php",
             dataType: "html",
             data: myData,
             success: function(response) {
-                $("#MainResult").html('<fieldset class="response">' + response + '</fieldset>');
+                $("#MainResult").html('<fieldset class="response">' + response + '</fieldset>').css('text-align','center');
                 $("#MainResult").slideDown("slow"); //show Result 
                 $("#MainContent").hide(); //hide form div slowly
+                $(spinner).remove();
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 $("#ErrResults").html(thrownError);
+                $(spinner).remove();
             }
         });
         return false;
