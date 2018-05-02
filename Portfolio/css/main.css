@@ -3522,9 +3522,9 @@ span.dropcap {
 .flickr li {
   float: left;
   margin: 5px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   width: 150px;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -3534,6 +3534,12 @@ span.dropcap {
 .flickr li:hover {
   opacity: 1;
 }
+
+#footer > div.container > article > ul.flickr  img {
+  max-height: 150px;
+  /* max-width: 150px !important; */
+}
+
 /* ==========================================================================
    Backgrounds section style
    ========================================================================== */
