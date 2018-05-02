@@ -35,8 +35,11 @@ $message['phone'] = filter_var($_POST['postPhone'], FILTER_VALIDATE_REGEXP, ['op
 
 if($output['success'] !== null){
     http_response_code(400);
-    echo json_encode($output);
+    // echo json_encode($output);
+    echo 'Thanks for your message! I will get back to you as soon as possible.';
     exit();
+} else {
+    echo 'Sorry, there was an issue with the server, please try again later.';
 }
 
 $mail = new PHPMailer;
@@ -89,5 +92,4 @@ if(!$mail->send()) {
     $output['success'] = true;
 }
 // echo json_encode($output);
-echo 'Thanks for your message! I will get back to you as soon as possible.'
 ?>
