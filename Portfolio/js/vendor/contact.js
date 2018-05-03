@@ -40,10 +40,10 @@ $(document).ready(function() {
             return false;
         }
 
-        if (js_phone == "") {
-            $("#phoneLb .error").fadeIn('slow').idle(1000).fadeOut('slow');
-            return false;
-        }
+        // if (js_phone == "") {
+        //     $("#phoneLb .error").fadeIn('slow').idle(1000).fadeOut('slow');
+        //     return false;
+        // }
         if (js_message == "") {
             $("#messageLb .error").fadeIn('slow').idle(1000).fadeOut('slow');
             return false;
@@ -69,6 +69,8 @@ $(document).ready(function() {
             error: function(xhr, ajaxOptions, thrownError) {
                 $("#ErrResults").html(thrownError);
                 $(spinner).remove();
+                $("#MyContactForm > .text-center").text('Sorry, there was an issue with the server, please try again later.').css('color', 'white');
+                $(".contact-btn").remove();
             }
         });
         return false;
