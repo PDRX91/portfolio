@@ -3550,7 +3550,9 @@ span.dropcap {
   color: #222222;
 }
 .flickr {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0;
 }
 .flickr li {
@@ -3558,6 +3560,7 @@ span.dropcap {
   margin: 5px;
   /* background-color: #ffffff; */
   width: 150px;
+  max-width: 29%;
   /* opacity: 0.7; */
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -3571,9 +3574,20 @@ span.dropcap {
 
 #footer > div.container > article > ul.flickr  img {
   max-height: 150px;
+  width: 100%;
   /* max-width: 150px !important; */
 }
-
+#footerBot, #footerRow, #footSection{
+  width: 100%;
+}
+#footerRow{
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.footLinks, .footLogo{
+  margin:0 30px;
+}
 /* ==========================================================================
    Backgrounds section style
    ========================================================================== */
