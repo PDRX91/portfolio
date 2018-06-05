@@ -127,6 +127,9 @@ h7 {
   margin: 0 0 30px 0;
   color: #999;
 }
+.block-feature > a, .block-feature > i {
+  pointer-events: none;
+}
 a {
   color: rgba(255, 255, 255, 0.7);
   -webkit-transition: all 0.3s ease;
