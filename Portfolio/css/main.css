@@ -127,6 +127,9 @@ h7 {
   margin: 0 0 30px 0;
   color: #999;
 }
+.block-feature > a, .block-feature > i {
+  pointer-events: none;
+}
 a {
   color: rgba(255, 255, 255, 0.7);
   -webkit-transition: all 0.3s ease;
@@ -2012,7 +2015,21 @@ section:hover .img-rotate img {
   position: absolute;
   width: 100%;
   height: 90px;
-  top: 50%;
+  top: 40%;
+  left: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: -45px;
+}
+.portfolio-cell .portfolio-item .image-overlay .overlay2 {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  top: 35%;
   left: 0;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -2028,6 +2045,18 @@ section:hover .img-rotate img {
   display: block;
   line-height: 30px;
 }
+
+@media only screen and (max-width:1200px){
+  .portfolio-cell .portfolio-item .image-overlay .image-overlay-content p{
+    font-size:1rem;
+  }
+}
+@media only screen and (max-width:990px){
+  .portfolio-cell .portfolio-item .image-overlay .image-overlay-content p{
+    font-size:14px;
+  }
+}
+
 .portfolio-cell .portfolio-item .image-overlay .image-overlay-content h4 {
   text-align: center;
   text-transform: uppercase;
@@ -2040,6 +2069,7 @@ section:hover .img-rotate img {
 .portfolio-cell .portfolio-item .image-overlay .image-overlay-content p {
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
+  margin:0;
 }
 .portfolio-cell .portfolio-item:hover .image-overlay {
   border: none;

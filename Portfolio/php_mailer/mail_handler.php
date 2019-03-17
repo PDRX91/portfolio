@@ -38,10 +38,10 @@ if($output['success'] !== null){
     // echo json_encode($output);
     echo 'Sorry, there was an issue with the server, please try again later.';
     exit();
-} 
+}
 
 $mail = new PHPMailer;
-$mail->SMTPDebug = 0;           // Enable verbose debug output. Change to 0 to disable debugging output.
+$mail->SMTPDebug = 1;           // Enable verbose debug output. Change to 0 to disable debugging output.
 
 $mail->isSMTP();                // Set mailer to use SMTP.
 $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers.
@@ -63,7 +63,7 @@ $mail->smtpConnect($options);
 $mail->From = $message['email'];
 // $mail->From = EMAIL_USER;  // sender's email address (shows in "From" field)
 $mail->FromName = $message['name'];   // sender's name (shows in "From" field)
-// $mail->FromName = EMAIL_USERNAME; 
+// $mail->FromName = EMAIL_USERNAME;
 $mail->addAddress(EMAIL_TO_ADDRESS);  // Add a recipient
 //$mail->addAddress('ellen@example.com');                        // Name is optional
 $mail->addReplyTo($message['email'], $message['name']);                          // Add a reply-to address
