@@ -41,7 +41,7 @@ if($output['success'] !== null){
 }
 
 $mail = new PHPMailer;
-$mail->SMTPDebug = 1;           // Enable verbose debug output. Change to 0 to disable debugging output.
+$mail->SMTPDebug = 2;           // Enable verbose debug output. Change to 0 to disable debugging output.
 
 $mail->isSMTP();                // Set mailer to use SMTP.
 $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers.
@@ -86,7 +86,8 @@ $mail->AltBody = htmlentities($message['message']);
 if(!$mail->send()) {
     $output['success']= false;
     $output['messages'][] = $mail->ErrorInfo;
-    echo 'Sorry, there was an issue with the server, please try again later.';
+	// echo 'Sorry, there was an issue with the server, please try again later.';
+	echo $mail->Debugoutput;
     exit();
 } else {
     $output['success'] = true;
