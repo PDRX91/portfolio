@@ -35,8 +35,8 @@ $message['phone'] = filter_var($_POST['postPhone'], FILTER_VALIDATE_REGEXP, ['op
 
 if($output['success'] !== null){
     http_response_code(400);
-    // echo json_encode($output);
-    echo 'Sorry, there was an issue with the server, please try again later.';
+    echo json_encode($output);
+    // echo 'Sorry, there was an issue with the server, please try again later.';
     exit();
 }
 
@@ -87,7 +87,7 @@ if(!$mail->send()) {
     $output['success']= false;
     $output['messages'][] = $mail->ErrorInfo;
 	// echo 'Sorry, there was an issue with the server, please try again later.';
-	echo $mail->Debugoutput;
+	$output['debug'] = $mail->Debugoutput;
     exit();
 } else {
     $output['success'] = true;
